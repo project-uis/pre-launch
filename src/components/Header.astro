@@ -1,0 +1,145 @@
+---
+const { title, description } = Astro.props;
+import Logo from "../images/logo.svg";
+import HeroLeft from "../images/illustration-hero-left.svg";
+import HeroRight from "../images/illustration-hero-right.svg";
+import Squiggle from "../images/bg-hero-squiggle.svg";
+import Mouse from "../images/icon-scroll.svg";
+---
+
+<section class="header-section">
+  <img src={Logo} />
+  <div class="content">
+    <div class="illustrations">
+      <div class="illustration-left">
+        <img src={HeroLeft} />
+      </div>
+      <div class="illustration-center">
+        <img src={Squiggle} />
+      </div>
+      <div class="illustration-right">
+        <img src={HeroRight} />
+      </div>
+    </div>
+    <div class="middle-content">
+      <h1>Get paid for the work you <span>love</span> to do.</h1>
+      <p>{description}</p>
+      <img class="mouse" src={Mouse} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .content {
+    padding-top: 100px;
+  }
+  .mouse {
+    margin-top: 60px;
+  }
+  .header-section > img {
+    margin-top: 20px;
+  }
+  .header-section .content {
+    margin: 0 auto;
+    max-width: 60ch;
+    display: grid;
+  }
+  .illustrations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .illustration-center {
+    position: absolute;
+  }
+
+  .illustration-left {
+    position: absolute;
+    left: 0;
+  }
+  .illustration-right {
+    position: absolute;
+    right: 0;
+  }
+  .header-section div:nth-child(2) {
+    display: block;
+    text-align: center;
+  }
+  .middle-content {
+    position: relative;
+    z-index: 999;
+  }
+  span {
+    color: var(--celeste);
+  }
+  h1 {
+    color: var(--white);
+    font-size: 3rem;
+    line-height: 1;
+    margin-top: 50px;
+    padding-bottom: 20px;
+  }
+  p {
+    color: var(--white);
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+      padding-inline: 30px;
+    }
+    p {
+      padding-inline: 30px;
+      line-height: 1.7;
+    }
+
+    .illustration-left {
+      left: -230px;
+    }
+    .illustration-right {
+      right: -240px;
+    }
+
+    .illustration-center img {
+      width: 100%;
+    }
+    .illustration-right img,
+    .illustration-left img {
+      width: 80%;
+      height: auto;
+    }
+  }
+  @media (max-width: 365px) {
+    .header-section {
+      text-align: center;
+    }
+    .illustration-center {
+      display: none !important;
+    }
+    .content {
+      padding-top: 60px;
+    }
+
+    .illustration-left {
+      left: -110px;
+    }
+    .illustration-right {
+      right: -130px;
+    }
+
+    .illustration-left img,
+    .illustration-right img {
+      width: 50%;
+      height: auto;
+    }
+    .middle-content {
+      top: 250px;
+    }
+    h1,
+    p {
+      padding-inline: 0;
+    }
+    .mouse{
+        margin-top: 40px;
+    }
+  }
+</style>
