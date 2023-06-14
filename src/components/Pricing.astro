@@ -1,0 +1,171 @@
+---
+import ShapeOne from "../images/icon-paid.svg";
+import ShapeTwo from "../images/icon-free.svg";
+---
+
+<section class="pricing-section">
+  <div class="pricing-desc">
+    <h2>Our pricing plans</h2>
+    <p>
+      We only make money when our creators make money. Our plans are always
+      affordable, and it’s completely free to get started.
+    </p>
+  </div>
+
+  <ul class="card">
+    <li class="first-card">
+      <img src={ShapeTwo} alt="Shape 1" />
+      <h3>Dip your toe</h3>
+      <p>
+        Just getting started? No problem at all! Our free plan will take you a
+        long way.
+      </p>
+      <h2>Free</h2>
+      <ul>
+        <li>
+          <p>Unlimited products</p>
+        </li>
+        <li>
+          <p>Basic analytics</p>
+        </li>
+        <li>
+          <p>Limited marketplace exposure</p>
+        </li>
+        <li>
+          <p>10% fee per transaction</p>
+        </li>
+      </ul>
+    </li>
+
+    <li class="second-card">
+      <img src={ShapeOne} alt="Shape 2" />
+      <h3>Dive right in</h3>
+      <p>
+        Ready for the big time? Our paid plan will help you take your business
+        to the next level.
+      </p>
+      <div>
+        <h2>$25.00</h2>
+        <p>/ month</p>
+      </div>
+      <ul>
+        <li>
+          <p>Custom domain</p>
+        </li>
+        <li>
+          <p>Advanced analytics and reports</p>
+        </li>
+        <li>
+          <p>High marketplace visibility</p>
+        </li>
+        <li>
+          <p>5% fee per transaction</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .pricing-section .pricing-desc {
+    text-align: center;
+    color: var(--white);
+    width: 50%;
+    margin: 0 auto;
+  }
+  .pricing-section .pricing-desc p {
+    color: var(--steel);
+    line-height: 1.9;
+  }
+  .pricing-section .pricing-desc h2 {
+    font-size: 2rem;
+    padding-bottom: 20px;
+  }
+  .card {
+    display: flex;
+    position: relative;
+    margin-top: 100px;
+  }
+  .card > li {
+    border-radius: 10px;
+    width: 45%;
+    padding: 30px 35px;
+    margin: 0 auto;
+  }
+  .card .first-card {
+    background: var(--regal-blue);
+    color: var(--white);
+  }
+  .card .first-card > p,
+  .card .second-card > p {
+    color: var(--steel);
+    padding-block: 20px;
+    line-height: 1.7;
+  }
+  h3 {
+    padding-top: 30px;
+  }
+  .card .first-card img {
+    position: absolute;
+    top: -20px;
+  }
+  .card .second-card > ul li p::before {
+    content: url("../images/icon-check.svg ");
+    padding-right: 10px;
+  }
+  .card .first-card > ul li p::before {
+    content: url("../images/icon-check-celeste.png ");
+    padding-right: 10px;
+  }
+  .card .second-card > div {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .card .second-card > div h2,
+  h2 {
+    font-size: 2rem;
+  }
+  .first-card h2 {
+    padding-bottom: 20px;
+  }
+  .card .second-card > div p {
+    color: var(--steel);
+  }
+  .card .second-card > ul li,
+  .card .first-card > ul li {
+    padding: 10px 0;
+  }
+  .card .second-card img {
+    position: absolute;
+    top: -30px;
+  }
+  .card .second-card {
+    background: var(--celeste);
+  }
+  @media (max-width: 768px) {
+    .card {
+      display: block;
+      margin-inline: 50px;
+    }
+    .card li {
+      width: 100%;
+    }
+    .card > li {
+      margin-bottom: 80px;
+    }
+    .card .second-card > img {
+      position: relative;
+      top: -60px;
+    }
+    .card .second-card h3 {
+      padding: 0;
+    }
+  }
+  @media (max-width: 425px) {
+    .card {
+      margin-inline: 0;
+    }
+  }
+</style>
