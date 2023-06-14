@@ -1,5 +1,5 @@
 ---
-const { title, description } = Astro.props;
+const { description } = Astro.props;
 import Logo from "../images/logo.svg";
 import HeroLeft from "../images/illustration-hero-left.svg";
 import HeroRight from "../images/illustration-hero-right.svg";
@@ -63,21 +63,19 @@ import HeroTabletRight from "../images/illustration-hero-mobile-md.png";
   .illustration-center {
     position: absolute;
   }
-  
+
   .illustration-left {
     position: absolute;
-    left: 0;
+    left: -49px;
   }
   .illustration-right {
     position: absolute;
-    right: 0;
+    right: -49px;
   }
 
   .middle-content {
     display: block;
     text-align: center;
-  }
-  .middle-content {
     position: relative;
     z-index: 999;
   }
@@ -89,8 +87,9 @@ import HeroTabletRight from "../images/illustration-hero-mobile-md.png";
     color: var(--white);
     font-size: 3rem;
     line-height: 1;
-    margin-top: 50px;
+    margin-top: 100px;
     padding-bottom: 20px;
+    max-width: 100%;
   }
   p {
     color: var(--steel);
@@ -133,7 +132,7 @@ import HeroTabletRight from "../images/illustration-hero-mobile-md.png";
       width: 100%;
     }
   }
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
     .illustration-left-tablet,
     .illustration-right-tablet {
       display: none;
@@ -162,6 +161,7 @@ import HeroTabletRight from "../images/illustration-hero-mobile-md.png";
       height: auto;
     }
     .illustration-mobile img {
+      padding-top: 50px;
       width: 100%;
     }
 

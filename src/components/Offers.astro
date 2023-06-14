@@ -1,0 +1,130 @@
+---
+import FinancialFreedom from "../images/illustration-financial-freedom.svg";
+import Passions from "../images/illustration-passions.svg";
+import LifeStyle from "../images/illustration-lifestyle.svg";
+import WorkAnywhere from "../images/illustration-work-anywhere.svg";
+---
+
+<section class="offer-section">
+  <ul>
+    <li>
+      <div>
+        <img src={Passions} alt="" />
+      </div>
+      <div>
+        <h4>Indulge your passions</h4>
+        <p>
+          Your passions shouldn't be just for the weekend. Earn a living doing
+          what you love.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src={FinancialFreedom} alt="" />
+      </div>
+      <div>
+        <h4>Gain financial freedom</h4>
+        <p>
+          Start making money work for you. There’s nothing quite like earning
+          while you sleep.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src={LifeStyle} alt="" />
+      </div>
+      <div>
+        <h4>Choose your lifestyle</h4>
+        <p>
+          Own your daily schedule. Fancy a lie-in? Go for it! Take charge of
+          your week.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src={WorkAnywhere} alt="" />
+      </div>
+      <div>
+        <h4>Work from anywhere</h4>
+        <p>
+          Selling online means not being pinned down. Want to work AND travel?
+          Go for it!
+        </p>
+      </div>
+    </li>
+  </ul>
+
+  <style>
+    .offer-section {
+      margin: 230px 0 180px 0;
+    }
+    .offer-section ul li div:first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      width: 160px;
+      height: 160px;
+      background-color: var(--regal-blue);
+    }
+    .offer-section ul {
+      display: flex;
+      color: var(--white);
+      gap: 30px;
+    }
+    .offer-section ul li {
+      display: grid;
+      gap: 30px;
+      width: 30%;
+    }
+    .offer-section ul li:nth-child(2),
+    .offer-section ul li:last-child {
+      margin-top: 40px;
+    }
+    h4 {
+      padding-bottom: 30px;
+    }
+    p {
+      color: var(--steel);
+      line-height: 1.9;
+    }
+    @media (max-width: 768px) {
+      .offer-section ul {
+        display: block;
+      }
+      .offer-section ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-inline: 50px;
+      }
+      .offer-section ul li:nth-child(2),
+      .offer-section ul li:last-child {
+        position: relative;
+        margin-bottom: 40px;
+        left: -30px;
+      }
+    }
+    @media (max-width: 425px) {
+      .offer-section ul li {
+        display: block;
+        padding-inline: 0;
+        text-align: center;
+      }
+      .offer-section ul li:nth-child(2),
+      .offer-section ul li:last-child {
+        left: 0;
+      }
+      .offer-section ul li div {
+        margin: 0 auto;
+      }
+      h4 {
+        padding-top: 20px;
+      }
+    }
+  </style>
+</section>
