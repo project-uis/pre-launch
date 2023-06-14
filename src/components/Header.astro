@@ -5,22 +5,37 @@ import HeroLeft from "../images/illustration-hero-left.svg";
 import HeroRight from "../images/illustration-hero-right.svg";
 import Squiggle from "../images/bg-hero-squiggle.svg";
 import Mouse from "../images/icon-scroll.svg";
+import HeroMobile from "../images/illustration-hero-mobile.png";
+import HeroTabletLeft from "../images/illustration-hero-mobile-left-md.png";
+import HeroTabletRight from "../images/illustration-hero-mobile-md.png";
 ---
 
 <section class="header-section">
   <img src={Logo} />
+  <div class="illustration-mobile">
+    <img src={HeroMobile} />
+  </div>
   <div class="content">
     <div class="illustrations">
       <div class="illustration-left">
         <img src={HeroLeft} />
       </div>
+      <div class="illustration-left-tablet">
+        <img src={HeroTabletLeft} />
+      </div>
+
       <div class="illustration-center">
         <img src={Squiggle} />
+      </div>
+
+      <div class="illustration-right-tablet">
+        <img src={HeroTabletRight} />
       </div>
       <div class="illustration-right">
         <img src={HeroRight} />
       </div>
     </div>
+
     <div class="middle-content">
       <h1>Get paid for the work you <span>love</span> to do.</h1>
       <p>{description}</p>
@@ -44,14 +59,11 @@ import Mouse from "../images/icon-scroll.svg";
     max-width: 60ch;
     display: grid;
   }
-  .illustrations {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+
   .illustration-center {
     position: absolute;
   }
-
+  
   .illustration-left {
     position: absolute;
     left: 0;
@@ -60,7 +72,8 @@ import Mouse from "../images/icon-scroll.svg";
     position: absolute;
     right: 0;
   }
-  .header-section div:nth-child(2) {
+
+  .middle-content {
     display: block;
     text-align: center;
   }
@@ -68,6 +81,7 @@ import Mouse from "../images/icon-scroll.svg";
     position: relative;
     z-index: 999;
   }
+
   span {
     color: var(--celeste);
   }
@@ -81,7 +95,13 @@ import Mouse from "../images/icon-scroll.svg";
   p {
     color: var(--steel);
   }
-
+  .illustration-mobile {
+    display: none;
+  }
+  .illustration-left-tablet,
+  .illustration-right-tablet {
+    display: none;
+  }
   @media (max-width: 768px) {
     h1 {
       font-size: 2.25rem;
@@ -91,24 +111,33 @@ import Mouse from "../images/icon-scroll.svg";
       padding-inline: 30px;
       line-height: 1.7;
     }
+    .illustration-left-tablet,
+    .illustration-right-tablet {
+      position: absolute;
+      display: block;
+    }
 
-    .illustration-left {
+    .illustration-left-tablet {
       left: 0;
     }
-    .illustration-right {
+    .illustration-right-tablet {
       right: 0;
+    }
+
+    .illustration-right,
+    .illustration-left {
+      display: none;
     }
 
     .illustration-center img {
       width: 100%;
     }
-    .illustration-right img,
-    .illustration-left img {
-      width: 80%;
-      height: auto;
-    }
   }
-  @media (max-width: 365px) {
+  @media (max-width: 375px) {
+    .illustration-left-tablet,
+    .illustration-right-tablet {
+      display: none;
+    }
     .header-section {
       text-align: center;
     }
@@ -116,7 +145,15 @@ import Mouse from "../images/icon-scroll.svg";
       display: none !important;
     }
     .content {
-      padding-top: 60px;
+      padding-top: 0;
+    }
+    .illustration-mobile {
+      display: block;
+    }
+
+    .illustration-left,
+    .illustration-right {
+      display: none;
     }
 
     .illustration-left img,
@@ -124,9 +161,10 @@ import Mouse from "../images/icon-scroll.svg";
       width: 50%;
       height: auto;
     }
-    .middle-content {
-      top: 250px;
+    .illustration-mobile img {
+      width: 100%;
     }
+
     h1,
     p {
       padding-inline: 0;
