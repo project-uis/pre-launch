@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Offers from "../components/Offers.astro";
 import Pricing from "../components/Pricing.astro";
+import Contact from "../components/Contact.astro";
+import FooterSquiggle from "../images/bg-footer-squiggle.svg";
 ---
 
 <Layout title="Pre Launch">
@@ -12,7 +14,9 @@ import Pricing from "../components/Pricing.astro";
     />
     <Offers />
     <Pricing />
+    <Contact />
   </main>
+  <img src={FooterSquiggle} />
 </Layout>
 
 <style>
@@ -20,6 +24,12 @@ import Pricing from "../components/Pricing.astro";
     margin: auto;
     padding: 1.5rem;
     max-width: 1110px;
+  }
+  img {
+    position: relative;
+    margin: 70px 0 80px 0;
+    width: 100%;
+    z-index: 1;
   }
   h1 {
     font-size: 3rem;
